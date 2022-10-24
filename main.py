@@ -4,7 +4,6 @@ from tkinter import messagebox
 
 import requests
 
-
 win = Tk()
 
 win.geometry("700x650")
@@ -13,9 +12,16 @@ win.title("Web Scraper Site")
 scrape_site = "http://45.77.98.77/site/temp_site/main.html"
 frame_site = "http://45.77.98.57/site/temp_site/frame_1.html"
 
+page = requests.get(frame_site)
+
 r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
 
-click_button = Button(win, text="Scrape")
+
+def my_function():  # start Web Scraper
+    tkinter.showinfo("Start Web Scraper")
+
+
+click_button = Button(win, text="Scrape", command=my_function)
 
 text_box = Text(
     win,
@@ -24,17 +30,12 @@ text_box = Text(
 )
 r.pack()
 
-def my_function():
-    return(page.content)
-
 click_button.pack()
 
 message=''
 text_box.pack(expand=True)
-text_box.insert('end', my_function())
+text_box.insert('end', my_function)
 text_box.config(state='disabled')
-
-
 
 win.resizable(False, False)
 win.mainloop()
