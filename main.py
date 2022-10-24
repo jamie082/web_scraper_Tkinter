@@ -16,10 +16,13 @@ page = requests.get(frame_site)
 
 r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
 
+def scraper():
+    return page.content
 
-def my_function():  # start Web Scraper
-    tkinter.showinfo("Start Web Scraper")
-
+def my_function():  # start Web Scraper code
+    messagebox.showinfo("Alert", "Executed Web Scraper")
+    text_box.insert(END, scraper)
+    print(page.content) # put it inside text_box
 
 click_button = Button(win, text="Scrape", command=my_function)
 
@@ -31,10 +34,7 @@ text_box = Text(
 r.pack()
 
 click_button.pack()
-
-message=''
 text_box.pack(expand=True)
-text_box.insert('end', my_function)
 text_box.config(state='disabled')
 
 win.resizable(False, False)
