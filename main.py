@@ -16,14 +16,14 @@ page = requests.get(frame_site)
 
 r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
 
-def scraper():
+def scraper_function():
     # scrape to inside text box
-    return page.content
+    print(page.content)
 
 def my_function():  # start Web Scraper code
     messagebox.showinfo("Program Alert", "Web Scraper Started")
-    text_box.insert(END, scraper)
-    print(page.content) # put it inside text_box
+    text_box.insert(END, "lol") # print "lol" to text_box
+    print(page.content) # scrape to console
 
 click_button = Button(win, text="Scrape", command=my_function)
 
@@ -36,7 +36,8 @@ r.pack()
 
 click_button.pack()
 text_box.pack(expand=True)
-text_box.config(state='disabled')
+text_box.config(state="disabled")
+click_button.pack()
 
 win.resizable(False, False)
 win.mainloop()
