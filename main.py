@@ -34,10 +34,13 @@ text_box = Text(
 )
 r.pack()
 
+
+# https://www.geeksforgeeks.org/python-tkinter-text-widget/
+
 click_button.pack()
-text_box.pack(expand=True)
-text_box.config(state="disabled")
-click_button.pack()
+text_box.pack()
+#text_box.config(state="disabled")
 
 win.resizable(False, False)
+
 win.mainloop()
