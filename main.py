@@ -7,17 +7,22 @@ import requests
 win = Tk()
 
 win.geometry("700x300")
-win.title("Web Scraper Site")
+win.title("Jamie's Web Scraper")
 
 scrape_site = "http://45.77.98.77/site/temp_site/main.html"
 frame_site = "http://45.77.98.57/site/temp_site/frame_1.html"
+
+page_2 = requests.get("http://45.77.98.57/site/temp_site/body_page.html")
+soup_2 = BeautifulSoup(page_2.content, "html.parser")
 
 r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
     
 page = requests.get(frame_site)
 
+my_list = ['Linux', 'Windows', 'Python', 'Web Links', 'Linux', 'portfolio']
+
 def scraper_function():
-    messagebox.showinfo("Program Alert", "Web Scraper Started")
+    messagebox.showinfo("Alert", "Web Scraper Started")
     text_box.insert(END, page.text)
 
 def clear_textbox():
@@ -25,6 +30,17 @@ def clear_textbox():
 
 click_button = Button(win, text="Scrape", command=scraper_function)
 clear_button = Button(win, text="Clear", command=clear_textbox)
+
+my_list = ['Linux', 'Windows', 'Python', 'Web Links', 'Linux', 'portfolio']
+
+def function_1(): # print to text_box
+    for i in my_list:
+    div_specify = soup.find_all(class_=i) # Linux, Windows, Python, Web Links, Linux, portfolio
+    print(i)
+
+    for counter in range(1): 
+        paragraph = soup_2.find(class_="paragraph_main")
+        print(paragraph)
 
 text_box = Text(
     win,
