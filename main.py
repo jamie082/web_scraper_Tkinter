@@ -15,11 +15,16 @@ frame_site = "http://45.77.98.57/site/temp_site/frame_1.html"
 r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
     
 page = requests.get(frame_site)
+
 def scraper_function():
     messagebox.showinfo("Program Alert", "Web Scraper Started")
     text_box.insert(END, page.text)
 
+def clear_textbox():
+    text_box.delete(1.0, 'end')
+
 click_button = Button(win, text="Scrape", command=scraper_function)
+clear_button = Button(win, text="Clear", command=clear_textbox)
 
 text_box = Text(
     win,
@@ -29,6 +34,7 @@ text_box = Text(
 r.pack()
 
 click_button.pack()
+clear_button.pack()
 text_box.pack()
 
 win.resizable(False, False)
