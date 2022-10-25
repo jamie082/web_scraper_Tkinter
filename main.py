@@ -23,7 +23,7 @@ my_list = ['Linux', 'Windows', 'Python', 'Web Links', 'Linux', 'portfolio']
 
 def scraper_function():
     messagebox.showinfo("Alert", "Web Scraper Started")
-    text_box.insert(END, page.text)
+    text_box.insert(END, function_1)
 
 def clear_textbox():
     text_box.delete(1.0, 'end')
@@ -35,12 +35,11 @@ my_list = ['Linux', 'Windows', 'Python', 'Web Links', 'Linux', 'portfolio']
 
 def function_1(): # print to text_box
     for i in my_list:
-    div_specify = soup.find_all(class_=i) # Linux, Windows, Python, Web Links, Linux, portfolio
-    print(i)
+        div_specify = soup.find_all(class_=i) # Linux, Windows, Python, Web Links, Linux, portfolio
 
     for counter in range(1): 
         paragraph = soup_2.find(class_="paragraph_main")
-        print(paragraph)
+        return paragraph, div_specify
 
 text_box = Text(
     win,
