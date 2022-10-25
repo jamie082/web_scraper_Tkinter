@@ -13,13 +13,11 @@ scrape_site = "http://45.77.98.77/site/temp_site/main.html"
 frame_site = "http://45.77.98.57/site/temp_site/frame_1.html"
 
 r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
-
+    
 page = requests.get(frame_site)
 def scraper_function():
     messagebox.showinfo("Program Alert", "Web Scraper Started")
-    text_box.insert(END, "lol...")
-
-    print (page.text)
+    text_box.insert(END, page.text)
 
 click_button = Button(win, text="Scrape", command=scraper_function)
 
