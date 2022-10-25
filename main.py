@@ -28,7 +28,7 @@ def function_1(): # print to text_box
     for counter in range(1): 
         paragraph = soup_2.find(class_="paragraph_main")
         return paragraph, div_specify
-        
+
 def scraper_function():
     messagebox.showinfo("Alert", "Web Scraper Started")
     text_box.insert(END, function_1)
@@ -40,8 +40,6 @@ click_button = Button(win, text="Scrape", command=scraper_function)
 clear_button = Button(win, text="Clear", command=clear_textbox)
 
 my_list = ['Linux', 'Windows', 'Python', 'Web Links', 'Linux', 'portfolio']
-
-
 
 text_box = Text(
     win,
