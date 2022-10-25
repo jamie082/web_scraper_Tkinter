@@ -14,17 +14,26 @@ frame_site = "http://45.77.98.57/site/temp_site/frame_1.html"
 
 r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
 
+page = requests.get(frame_site)
 def scraper_function():
     # scraped to inside text box
-    page = requests.get(frame_site)
-    return "page.text"
+    page = ''
+    for i in range(10):
+        page += str(i)
+    return page
+
+s = scraper_function()
+
+def print_function():
+    print(s)
+    text_box.insert(END, scraper_function)
 
 def my_function():  # start Web Scraper code
     messagebox.showinfo("Program Alert", "Web Scraper Started")
-    text_box.insert(END, scraper_function) # print "lol" to text_box
-    print(page.content) # scrape to console
+    #text_box.insert(END, scraper_function) # print "lol" to text_box
+    print(s) # scrape to console
 
-click_button = Button(win, text="Scrape", command=my_function)
+click_button = Button(win, text="Scrape", command=print_function)
 
 text_box = Text(
     win,
