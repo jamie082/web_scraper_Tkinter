@@ -16,24 +16,12 @@ r = Label(win, text="http://45.77.988.77/site/temp_site/main.html", width=35)
 
 page = requests.get(frame_site)
 def scraper_function():
-    # scraped to inside text box
-    page = ''
-    for i in range(10):
-        page += str(i)
-    return page
-
-s = scraper_function()
-
-def print_function():
-    print(s)
-    text_box.insert(END, scraper_function)
-
-def my_function():  # start Web Scraper code
     messagebox.showinfo("Program Alert", "Web Scraper Started")
-    #text_box.insert(END, scraper_function) # print "lol" to text_box
-    print(s) # scrape to console
+    text_box.insert(END, "lol...")
 
-click_button = Button(win, text="Scrape", command=print_function)
+    print (page.text)
+
+click_button = Button(win, text="Scrape", command=scraper_function)
 
 text_box = Text(
     win,
@@ -41,9 +29,6 @@ text_box = Text(
     width=80
 )
 r.pack()
-
-
-# https://www.geeksforgeeks.org/python-tkinter-text-widget/
 
 click_button.pack()
 text_box.pack()
