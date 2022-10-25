@@ -21,6 +21,14 @@ page = requests.get(frame_site)
 
 my_list = ['Linux', 'Windows', 'Python', 'Web Links', 'Linux', 'portfolio']
 
+def function_1(): # print to text_box
+    for i in my_list:
+        div_specify = soup.find_all(class_=i) # Linux, Windows, Python, Web Links, Linux, portfolio
+
+    for counter in range(1): 
+        paragraph = soup_2.find(class_="paragraph_main")
+        return paragraph, div_specify
+        
 def scraper_function():
     messagebox.showinfo("Alert", "Web Scraper Started")
     text_box.insert(END, function_1)
@@ -33,13 +41,7 @@ clear_button = Button(win, text="Clear", command=clear_textbox)
 
 my_list = ['Linux', 'Windows', 'Python', 'Web Links', 'Linux', 'portfolio']
 
-def function_1(): # print to text_box
-    for i in my_list:
-        div_specify = soup.find_all(class_=i) # Linux, Windows, Python, Web Links, Linux, portfolio
 
-    for counter in range(1): 
-        paragraph = soup_2.find(class_="paragraph_main")
-        return paragraph, div_specify
 
 text_box = Text(
     win,
