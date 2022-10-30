@@ -33,20 +33,22 @@ def function_1(): # print to text_box
         return paragraph
 
 
-string_ouput = []
 def two_funct():
+    string_output = []
     for counter in string_output:
         string_output = soup_2.find(class_="paragraph_main")
-    return string_output
+
+    messagebox.showinfo("Alert", "Web Scraper Started")
+    text_box.insert(END, string_output)
 
 def scraper_function():
-    messagebox.showinfo("Alert", "Web Scraper Started")
+    messagebox.showinfo("Alert", "Web Sraper Started")
     text_box.insert(END, string_output)
 
 def clear_textbox():
     text_box.delete(1.0, 'end')
 
-click_button = Button(win, text="Scrape", command=scraper_function)
+click_button = Button(win, text="Scrape", command=two_funct)
 clear_button = Button(win, text="Clear", command=clear_textbox)
 
 text_box = Text(
