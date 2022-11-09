@@ -43,12 +43,12 @@ def two_funct():
 
 def scraper_function():
     messagebox.showinfo("Alert", "Web Sraper Started")
-    text_box.insert(END, string_output)
+    text_box.insert(END, page.text)
 
 def clear_textbox():
     text_box.delete(1.0, 'end')
 
-click_button = Button(win, text="Scrape", command=two_funct)
+click_button = Button(win, text="Scrape", command=scraper_function)
 clear_button = Button(win, text="Clear", command=clear_textbox)
 
 text_box = Text(
